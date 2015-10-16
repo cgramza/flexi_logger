@@ -237,7 +237,7 @@ impl FlexiLogger {
             None => {
                 match env::var("RUST_LOG") {
                     Ok(spec) => parse_logging_spec(&spec),
-                    Err(..) => (vec![LogDirective { name: None, level: LogLevelFilter::Trace }], None),
+                    Err(..) => (vec![LogDirective { name: None, level: LogLevelFilter::Error }], None),
                 }
             }
         };
